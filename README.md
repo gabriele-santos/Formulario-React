@@ -1,4 +1,4 @@
-# Formul-rio-React
+# Formulario-React
 ###  Atividade de fixação 1:
 > A partir do _[repositório](https://github.com/tryber/exercise-pokedex-state)_ crie a pasta `exercise-01` e realize os seguintes requisitos:
 
