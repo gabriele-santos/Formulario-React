@@ -1,15 +1,13 @@
-/* import states from "./arrayEstados"; */
-
 export type FormStateType = {
     name: string,
     email: string,
-    cpf: number, //DÚVIDA
+    cpf: string,
     address: string,
     city: string,
-    state: string, //DÚVIDA
-    residence: 'Casa' | 'Apartamento',
+    state: string,
+    residence: string,
     curriculum: string,
     office: string,
-    jobDescription: string,
+    roleDescription: string,
 
 }
