@@ -1,12 +1,14 @@
 import { FormStateType } from "../types";
 
 type ProfessionalFormProp = {
-  formValues: FormStateType
+  formValues: FormStateType,
+  onChange: React.ChangeEventHandler,
+  onMouseEnter: React.MouseEventHandler<HTMLInputElement>,
+  mouseEnter: boolean,
 }
 
-function ProfessionalForm({ formValues }: ProfessionalFormProp) {
-  const { curriculum, office, jobDescription
-  } = formValues;
+function ProfessionalForm({ formValues, onChange, onMouseEnter }: ProfessionalFormProp) {
+  const { curriculum, office, roleDescription } = formValues;
   return (
     <fieldset>
       <legend>Dados Profissionais</legend>
@@ -15,8 +17,9 @@ function ProfessionalForm({ formValues }: ProfessionalFormProp) {
         <textarea name="curriculum"
           id="curriculum-textarea"
           value={curriculum}
+          onChange={onChange}
           maxLength={1000}
-          required></textarea>
+          required />
       </div>
       <div className="office-container">
         <label htmlFor="office">
@@ -25,19 +28,24 @@ function ProfessionalForm({ formValues }: ProfessionalFormProp) {
             name="office"
             id="office-input"
             value={office}
+            onChange={onChange}
+            onMouseEnter={onMouseEnter}
             maxLength={40}
-            required />
+            required
+          // onMouseEnter
+          />
         </label>
       </div>
-      <div className="job-description">
-        <p>Descrição do Cargo:</p>
-        <textarea name="job-description"
-          id="job-description-textarea"
-          value={jobDescription}
-          maxLength={500}
-          required></textarea>
-      </div>
-    </fieldset>
+      <p> Descrição do cargo:</p>
+      <textarea
+        name="roleDescription"
+        id="roleDescription"
+        maxLength={500}
+        required
+        value={roleDescription}
+        onChange={onChange}
+      />
+    </fieldset >
   )
 }
 
