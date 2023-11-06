@@ -2,22 +2,25 @@ import { FormStateType } from "../types";
 
 type PersonalFormProp = {
   formValues: FormStateType,
-  handleChange: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void,
+  onChange: React.ChangeEventHandler,
 }
 
-function PersonalForm({ formValues, handleChange }: PersonalFormProp) {
+
+function PersonalForm({ formValues, onChange }: PersonalFormProp) {
   const { name, email, cpf } = formValues;
+
   return (
     <fieldset>
       <legend>Dados Pessoais</legend>
       <div className="container-name">
-        <label htmlFor="nome"> Nome:
+        <label htmlFor="nome">
+          Nome:
           <input type="text"
             required
             id="nome-input"
             name="name"
             value={name}
-            onChange={(event) => handleChange(event)}
+            onChange={onChange}
             maxLength={40} />
         </label>
       </div>
@@ -27,6 +30,7 @@ function PersonalForm({ formValues, handleChange }: PersonalFormProp) {
             name="email"
             id="email-input"
             value={email}
+            onChange={onChange}
             maxLength={50}
             required />
         </label>
@@ -37,6 +41,7 @@ function PersonalForm({ formValues, handleChange }: PersonalFormProp) {
             name="cpf"
             id="cpf-input"
             value={cpf}
+            onChange={onChange}
             maxLength={11}
             required />
         </label>
