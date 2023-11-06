@@ -1,4 +1,14 @@
-function AddressForm() {
+import { FormStateType } from "../types";
+import states from "../arrayEstados";
+
+type AdressFormProp = {
+  formValues: FormStateType,
+  onChange: React.ChangeEventHandler,
+  onBlur: React.FocusEventHandler,
+}
+
+function AddressForm({ formValues, onChange, onBlur }: AdressFormProp) {
+  const { address, city, state, residence } = formValues;
   return (
     <fieldset>
       <legend>Dados do endereço</legend>
@@ -7,8 +17,12 @@ function AddressForm() {
           <input type="text"
             maxLength={200}
             required
-            name="adress"
-            id="adress-input" />
+            name="address"
+            value={address}
+            id="adress-input"
+            onChange={onChange}
+
+          />
         </label>
       </div>
       <div className="container-city">
@@ -17,14 +31,23 @@ function AddressForm() {
             required
             id="city-input"
             name="city"
-            maxLength={28} />
+            value={city}
+            maxLength={28}
+            onChange={onChange}
+            onBlur={onBlur} />
         </label>
       </div>
       <div className="container-state"></div>
       <label htmlFor="">Estado
         <select name="state"
-          id="state-select">
-          <option value="states">PB</option>
+          id="state-select"
+          onChange={onChange}>
+          <option value={state}>Selecione</option>
+          {
+            states.map((stateList) => (
+              <option key={stateList.nome} value={stateList.nome}>{stateList.uf}</option>
+            ))
+          }
         </select>
       </label>
       <div>
@@ -32,12 +55,18 @@ function AddressForm() {
           <label htmlFor="residence1">Casa
             <input type="radio"
               name="residence"
-              id="house-input" />
+              id="house-input"
+              value={residence}
+              onChange={onChange}
+              /* checked={residence === 'Casa'}  */ /> {/* para atualizar o estado e ele ja inicia selecionado pois o valor inicial é 'casa' */}
           </label>
           <label htmlFor="residence2">Apartamento
             <input type="radio"
               name="residence"
-              id="apart-input" />
+              id="apart-input"
+              value={residence}
+              onChange={onChange}
+              /* checked={residence === 'Apartamento'}  */ />
           </label>
         </p>
       </div>
