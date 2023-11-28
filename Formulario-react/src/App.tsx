@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import PersonalForm from './components/PersonalForm ';
 import AddressForm from './components/AddressForm';
 import ProfessionalForm from './components/ProfessionalForm';
