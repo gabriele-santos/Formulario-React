@@ -1,6 +1,6 @@
 # Formulario-React
 ###  Atividade de fixação 1:
-> A partir do _[repositório](https://github.com/tryber/exercise-pokedex-state)_ crie a pasta `exercise-01` e realize os seguintes requisitos:
+> Crie a pasta `exercise-01` e realize os seguintes requisitos:
 
 Crie um formulário de cadastro de currículo com base na especificação seguintes:
 
@@ -85,5 +85,3 @@ Campo obrigatório
 Requisito 3 - Crie um botão que, ao ser clicado, monta uma `<div>` com o consolidado dos dados que foram inseridos no formulário.
 
 Requisito 4 - Crie um botão Limpar que limpa todos os campos do formulário e a `<div>` com seu currículo também.
-
-Requisitos Bônus: Utilize Regex (Expressões Regulares) para validar o campo email. O formato esperado é: trybe@gmail.com.
