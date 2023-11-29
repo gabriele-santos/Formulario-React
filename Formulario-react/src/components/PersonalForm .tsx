@@ -1,4 +1,6 @@
 import { FormStateType } from "../types";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 type PersonalFormProp = {
   formValues: FormStateType,
@@ -18,6 +20,7 @@ function PersonalForm({ formValues, onChange }: PersonalFormProp) {
           <input type="text"
             required
             id="nome-input"
+            className="form-control"
             name="name"
             value={name}
             onChange={onChange}
@@ -29,6 +32,7 @@ function PersonalForm({ formValues, onChange }: PersonalFormProp) {
           <input type="text"
             name="email"
             id="email-input"
+            className="form-control"
             value={email}
             onChange={onChange}
             maxLength={50}
@@ -40,6 +44,7 @@ function PersonalForm({ formValues, onChange }: PersonalFormProp) {
           <input type="text"
             name="cpf"
             id="cpf-input"
+            className="form-control"
             value={cpf}
             onChange={onChange}
             maxLength={11}

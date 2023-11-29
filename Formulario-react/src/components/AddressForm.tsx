@@ -20,6 +20,7 @@ function AddressForm({ formValues, onChange, onBlur }: AdressFormProp) {
             name="address"
             value={address}
             id="adress-input"
+            className="form-control"
             onChange={onChange}
 
           />
@@ -30,6 +31,7 @@ function AddressForm({ formValues, onChange, onBlur }: AdressFormProp) {
           <input type="text"
             required
             id="city-input"
+            className="form-control"
             name="city"
             value={city}
             maxLength={28}
@@ -38,11 +40,12 @@ function AddressForm({ formValues, onChange, onBlur }: AdressFormProp) {
         </label>
       </div>
       <div className="container-state"></div>
-      <label htmlFor="">Estado
+      <label htmlFor="">Estado:
         <select name="state"
           id="state-select"
+          className="form-select"
           onChange={onChange}>
-          <option value={state}>Selecione</option>
+          <option id="select-states" value={state}>Selecione</option>
           {
             states.map((stateList) => (
               <option key={stateList.nome} value={stateList.nome}>{stateList.uf}</option>
@@ -51,11 +54,12 @@ function AddressForm({ formValues, onChange, onBlur }: AdressFormProp) {
         </select>
       </label>
       <div>
-        <p>Tipo de Residência:
+        <p className="p-residence">Tipo de Residência:
           <label htmlFor="residence1">Casa
             <input type="radio"
               name="residence"
               id="house-input"
+              className="form-check-input"
               value={residence}
               onChange={onChange}
               /* checked={residence === 'Casa'}  */ /> {/* para atualizar o estado e ele ja inicia selecionado pois o valor inicial é 'casa' */}
@@ -64,6 +68,7 @@ function AddressForm({ formValues, onChange, onBlur }: AdressFormProp) {
             <input type="radio"
               name="residence"
               id="apart-input"
+              className="form-check-input"
               value={residence}
               onChange={onChange}
               /* checked={residence === 'Apartamento'}  */ />

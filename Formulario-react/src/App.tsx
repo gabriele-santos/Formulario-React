@@ -72,15 +72,17 @@ function App() {
   }
 
   return (
+    <div className="container-form">
     <form onSubmit={handleSubmit}>
       <PersonalForm onChange={handleChange} formValues={formValues} />
       <AddressForm onChange={handleChange} formValues={formValues} onBlur={handleBlur} />
       <ProfessionalForm onChange={handleChange} formValues={formValues} onMouseEnter={handleMouseEnter} mouseEnter={mouseEnter} />
-      <button type="submit" >Enviar</button>{
+      <button type="submit" id="btn-submit" className="btn btn-primary btn-lg" >Enviar</button>{
         submitData && <DataSubmit formValues={formValues} />
       }
-      <button type="reset" onClick={() => resetForm()}>Limpar</button>
+      <button type="reset" id="btn-delete" className="btn btn-primary btn-lg" onClick={() => resetForm()}>Limpar</button>
     </form >
+    </div>
   )
 }
 

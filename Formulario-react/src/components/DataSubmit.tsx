@@ -8,8 +8,10 @@ function DataSubmit({ formValues }: data) {
   const { name, email, cpf, address, city, state, residence, curriculum, office, roleDescription
   } = formValues;
   return (
-    <><h3>Valores preenchidos no formulário:</h3>
-      <p>Dados Pessoais:</p>
+    <>
+    <h3 id="values-submit">Valores preenchidos no formulário:</h3>
+      <div className="personal-data">
+      <p>Dados Pessoais</p>
       <div>
         Nome: {name}
       </div>
@@ -31,16 +33,18 @@ function DataSubmit({ formValues }: data) {
       <div>
         Residência: {residence}
       </div>
-      <p>Dados profissionais:</p>
+      <p>Dados profissionais</p>
       <div>
         Resumo do currículo: {curriculum}
       </div>
       <div>
-        cargo: {office}
+        Cargo: {office}
       </div>
       <div>
         Descrição do cargo: {roleDescription}
-      </div></>
+      </div>
+      </div>
+      </>
   )
 }
 
