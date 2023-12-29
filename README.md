@@ -1,1 +1,1 @@
-#formulário de cadastro de currículo!
+# formulário de cadastro de currículo!
